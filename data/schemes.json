@@ -1,0 +1,10 @@
+[
+  {
+    "name": "అమ్మ ఒడి",
+    "criteria": {
+      "income_below": 150000,
+      "has_children": true
+    },
+    "benefit": "₹15,000 సంవత్సరానికి"
+  }
+]
