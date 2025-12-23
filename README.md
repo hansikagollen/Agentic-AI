@@ -78,8 +78,8 @@ Agentic-AI/
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/hansikagollen/Agentic-AI.git
-cd Agentic-AI
+git clone https://github.com/hansikagollen/VoiceAssisstant.git
+cd VoiceAssisstant
 
 2️⃣ Create and Activate Virtual Environment
 python -m venv venv
