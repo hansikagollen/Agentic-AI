@@ -1,4 +1,4 @@
-# 🏛️ Telugu Voice-Based Government Scheme AI Agent
+# 🏛️ Telugu Voice-Based  AI Agent
 
 ## 📌 Overview
 This project is a **voice-first AI assistant** designed to help **Telugu-speaking users** understand and apply for government welfare schemes.  
