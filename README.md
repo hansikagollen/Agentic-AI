@@ -1,92 +1,79 @@
-# 🏛️ Telugu Voice-Based  AI Agent
+# 🏛️ Telugu Voice-Based Government Scheme AI Agent
 
 ## 📌 Overview
-This project is a **voice-first AI assistant** designed to help **Telugu-speaking users** understand and apply for government welfare schemes.  
-It enables users to **interact entirely through voice**, making it accessible for rural and non-English-speaking citizens.
+A voice-first, agentic AI system designed to help Telugu-speaking users discover and apply for government welfare schemes.  
+The system enables natural Telugu voice interaction, reasons about eligibility using an agent workflow, and performs actions such as saving applications to a persistent store.
 
-The system demonstrates an **Agentic AI workflow** that can:
-- Listen to Telugu speech
-- Convert speech to text
-- Reason over user input
-- Respond intelligently
-- Speak back in Telugu
+This project demonstrates a **Level-3 Agentic AI system** using planning, execution, and reasoning.
 
 ---
 
-## 🎯 Problem Statement
-Many government schemes fail to reach rural citizens due to:
-- Language barriers
-- Lack of digital literacy
-- Complex application processes
+## 🚀 Key Features
 
-This project addresses the problem by providing a **simple voice-based interface in Telugu**, allowing users to interact naturally without typing.
+- 🗣️ **Telugu Voice Interaction**
+  - Browser-based speech input using Streamlit
+  - Telugu Speech-to-Text (Google Speech Recognition)
+  - Telugu Text-to-Speech responses
 
----
+- 🧠 **Agentic Reasoning**
+  - Built using **LangGraph (Planner–Executor pattern)**
+  - Explicit reasoning steps shown in the UI
+  - Determines missing information and eligibility logic
 
-## ✨ Key Features
-- 🎙️ **Voice-First Interaction** – Users speak in Telugu instead of typing
-- 🧠 **Agentic Reasoning** – The agent can interpret user input and respond logically
-- 🗣️ **Telugu Language Support** – Both input and output are in Telugu
-- 🔊 **Text-to-Speech Output** – Replies are spoken back to the user
-- 🌐 **Browser-Based Microphone Capture** – Ensures reliability across systems
-- 📁 **Modular Project Design** – Clean separation of UI, logic, and speech components
+- 💾 **Persistent Actions**
+  - Eligible applications are saved to `applications.csv`
+  - Acts as proof-of-work for agent execution
 
----
-
-## 🧠 System Architecture
-
-Browser Microphone (Streamlit)
-↓
-Audio Input (.wav)
-↓
-Speech-to-Text (Google STT)
-↓
-Agent Reasoning Logic
-↓
-Text-to-Speech (gTTS Telugu)
-↓
-Audio Response
-
+- ⚠️ **Robust Error Handling**
+  - Handles silence, unrecognized speech, and incomplete inputs gracefully
 
 ---
 
 ## 🛠️ Tech Stack
-- **Frontend**: Streamlit
-- **Speech-to-Text**: Google Speech Recognition API
-- **Text-to-Speech**: gTTS (Google Text-to-Speech)
-- **Programming Language**: Python
-- **Agent Logic**: Rule-based / LLM-ready agent design
+
+| Component | Technology |
+|---------|-----------|
+Frontend UI | Streamlit |
+Speech-to-Text | SpeechRecognition (Google STT) |
+Text-to-Speech | gTTS (Telugu) |
+Agent Framework | LangGraph |
+Language | Python |
+Persistence | CSV File |
+Environment | Python Virtual Environment |
 
 ---
 
 ## 📂 Project Structure
 
 Agentic-AI/
-│
-├── app.py # Main Streamlit application
-├── voice.py # Telugu Text-to-Speech logic
-├── agent/ # Agent reasoning logic
-├── data/ # Data files 
-├── requirements.txt # Python dependencies
-├── README.md # Project documentation
-└── .gitignore # Ignored files (venv, audio files, etc.)
+├── app.py # Streamlit UI + voice pipeline
+├── voice.py # Telugu TTS logic
+├── agent/
+│ ├── init.py
+│ ├── agent.py # LangGraph planner–executor agent
+│ └── logic.py # Eligibility logic + CSV persistence
+├── applications.csv # Auto-generated application records
+├── requirements.txt
+└── README.md
 
 
 ---
 
-## ▶️ How to Run the Project
+## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/hansikagollen/VoiceAssisstant.git
-cd VoiceAssisstant
+git clone https://github.com/hansikagollen/Agentic-AI.git
+cd Agentic-AI
 
-2️⃣ Create and Activate Virtual Environment
+2️⃣ Create Virtual Environment
 python -m venv venv
-venv\Scripts\activate
 
-3️⃣ Install Dependencies
-pip install -r requirements.txt
+Activate:
+Windows
 
-4️⃣ Run the Application
+venv\Scripts\Activate
+
+▶️ Run the Application
 streamlit run app.py
+
